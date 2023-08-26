@@ -135,9 +135,89 @@ greetByMiddleName(fromFullname: (first: "Uriel", middle: "Alejandro", last: "Sou
 greetByMiddleName(fromFullname: (first: "Uriel", middle: "Alejandro", last: "Soubran"), withAge: 27)
 
 // Las funciones en swift son firstClassCitizens ?
-let myTypedFunction: ([Int]) -> ([Int],[Int]) = sortedEvenAndOddNumbers
+//let myTypedFunction: ([Int]) -> ([Int],[Int]) = sortedEvenAndOddNumbers
+//
+//myTypedFunction([])
 
-myTypedFunction([])
+
+//------------ FORMATTER ----------
+divideTerminalOutput(title: "Formatter")
+
+let volunteerCount = [1,3,40,32,2,53,77,13]
+func sortInAscendingOrder (i: Int, j: Int) -> Bool {
+    return i < j
+}
+let volunteerSortedCount = volunteerCount.sorted {$0 < $1}
+print(volunteerSortedCount)
+
+let volunteerAverages = [9.8,5.6,8.6,9.8,7.9,9.3,9.2,8.8]
+func doSomewWork (on input: String, using transformer: ()->Void, then completion: ()->Void){
+    print(input)
+    transformer()
+    completion()
+}
+doSomewWork(on: "Diplomado", using: {print("using")}, then: {print("then")})
+
+// (numbers, formatter) -> [String]
+func format( numbers: [Double], using formatter: (Double)->String = {"\($0)"} ) -> [String]{
+    var result = [String]()
+    for number in numbers {
+        let transformedNumber = formatter(number)
+        result.append(transformedNumber)
+    }
+    return result
+}
+func rounder(_ number: Double) -> String {
+    let roundedNumber: Int = Int(number)
+    return "\(roundedNumber)"
+}
+func addDescription(_ number: Double) -> String {
+    return "volunteer average: \(number)"
+}
+
+let formatterAverageVolunteers = format(numbers: volunteerAverages, using: addDescription)
+print(formatterAverageVolunteers)
+
+// Challenge: ghttps://classroom.github.com/a/f9-UgIJg
 
 
-// Challenge: https://classroom.github.com/a/f9-UgIJg
+//------------------ MAP CLOSURE ---------------
+divideTerminalOutput(title: "Map Closure")
+//closures
+let volunterCounts: [Int] = [1,3,40,32,2,53,77,13]
+let volunterAverages: [Double] = [10.75, 4.2, 1.5, 12.12, 16.815]
+
+let rounderVolunteers = volunterAverages.map { number in
+    return Int(number)
+}
+print(volunterAverages)
+print(rounderVolunteers)
+
+
+//--------------- FILTER ----------------
+divideTerminalOutput(title: "Filter")
+let passingVolunteers = rounderVolunteers.filter {
+    number in return number >= 10
+}
+
+print(passingVolunteers)
+
+
+//----------------- REDUCE ---------------
+divideTerminalOutput(title: "Reduce")
+//pide un numero inicial, y una funcion que tomara ese numero inicial y el siguiente numero en el array para devolver un resultado, en la siguiente iteracion toma ese resultado como primer parametro y el siguiente numero, etc.
+//passingVolunteers.reduce(<#T##initialResult: Result##Result#>, <#T##nextPartialResult: (Result, Int) throws -> Result##(Result, Int) throws -> Result##(_ partialResult: Result, Int) throws -> Result#>)
+let totalVolunteers = passingVolunteers.reduce(0) {
+    partialResult, number in
+    return partialResult + number
+}
+print(totalVolunteers)
+
+let finalVolunteerDescription = passingVolunteers.reduce("The volunteers were ") {
+    partialResult, number in
+    return partialResult + "\(number) "
+}
+print(finalVolunteerDescription)
+
+
+//--------------------  -------------------------
