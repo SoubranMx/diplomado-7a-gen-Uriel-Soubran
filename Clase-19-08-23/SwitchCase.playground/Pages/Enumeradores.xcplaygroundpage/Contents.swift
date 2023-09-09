@@ -94,7 +94,7 @@ func evaluate(expression: ArithmeticExpression) -> Float {
     case .substraction(let exprX, let exprY): return evaluate(expression: exprX) - evaluate(expression: exprY)
     case .multiplication(let exprX, let exprY): return evaluate(expression: exprX) * evaluate(expression: exprY)
     case .divition(let exprX, let exprY): return evaluate(expression: exprX) / evaluate(expression: exprY)
-    }
+    }e
 }
 
 print(evaluate(expression: product))
