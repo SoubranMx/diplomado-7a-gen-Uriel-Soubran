@@ -267,11 +267,11 @@
                                     <constraint firstAttribute="height" constant="150" id="VR7-WR-dDn"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKK-da-yex">
-                                <rect key="frame" x="272" y="296" width="105" height="35"/>
+                                <rect key="frame" x="16" y="326" width="361" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Share" imagePadding="10">
                                     <imageReference key="image" image="paperplane.fill" catalog="system" variableValue="0.60000000000000009"/>
@@ -280,6 +280,12 @@
                                     <action selector="onSendButtonClicked:" destination="O45-5a-Bnj" eventType="touchUpInside" id="8jQ-E3-7xz"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrQ-cV-nSe" userLabel="WordCountLabel">
+                                <rect key="frame" x="377" y="274" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7bk-Bw-DjT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -287,22 +293,26 @@
                             <constraint firstItem="7bk-Bw-DjT" firstAttribute="trailing" secondItem="5fA-9c-F9D" secondAttribute="trailing" constant="16" id="4mC-QR-jr1"/>
                             <constraint firstItem="5fA-9c-F9D" firstAttribute="leading" secondItem="7bk-Bw-DjT" secondAttribute="leading" constant="16" id="51i-5r-tdt"/>
                             <constraint firstItem="bdP-1t-fGx" firstAttribute="leading" secondItem="7bk-Bw-DjT" secondAttribute="leading" id="7gi-I8-Xuc"/>
+                            <constraint firstItem="wrQ-cV-nSe" firstAttribute="trailing" secondItem="5fA-9c-F9D" secondAttribute="trailing" id="Dda-cD-SSD"/>
                             <constraint firstItem="5fA-9c-F9D" firstAttribute="centerX" secondItem="pxB-ky-yAa" secondAttribute="centerX" id="K2N-7u-IYZ"/>
-                            <constraint firstItem="SKK-da-yex" firstAttribute="top" secondItem="5fA-9c-F9D" secondAttribute="bottom" constant="30" id="Kya-bj-Ngo"/>
                             <constraint firstItem="7bk-Bw-DjT" firstAttribute="trailing" secondItem="bdP-1t-fGx" secondAttribute="trailing" id="NIU-XV-OO3"/>
+                            <constraint firstItem="SKK-da-yex" firstAttribute="leading" secondItem="5fA-9c-F9D" secondAttribute="leading" id="Veo-7C-2kg"/>
+                            <constraint firstItem="SKK-da-yex" firstAttribute="top" secondItem="5fA-9c-F9D" secondAttribute="bottom" constant="60" id="X8B-Qm-HYe"/>
+                            <constraint firstItem="wrQ-cV-nSe" firstAttribute="top" secondItem="5fA-9c-F9D" secondAttribute="bottom" constant="8" id="YiI-xj-G57"/>
+                            <constraint firstItem="SKK-da-yex" firstAttribute="trailing" secondItem="5fA-9c-F9D" secondAttribute="trailing" id="bYL-rw-lLl"/>
                             <constraint firstItem="5fA-9c-F9D" firstAttribute="top" secondItem="bdP-1t-fGx" secondAttribute="bottom" constant="40" id="koH-be-VzS"/>
-                            <constraint firstItem="SKK-da-yex" firstAttribute="trailing" secondItem="5fA-9c-F9D" secondAttribute="trailing" id="ucl-Mf-NKR"/>
                             <constraint firstItem="bdP-1t-fGx" firstAttribute="centerX" secondItem="pxB-ky-yAa" secondAttribute="centerX" id="xnA-gD-q5b"/>
                             <constraint firstItem="bdP-1t-fGx" firstAttribute="top" secondItem="7bk-Bw-DjT" secondAttribute="top" constant="50" id="yAY-18-khB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="textViewField" destination="5fA-9c-F9D" id="1Ue-MP-RUd"/>
+                        <outlet property="wordCountLabel" destination="wrQ-cV-nSe" id="xrn-4g-n19"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOK-d4-CwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2660" y="655"/>
+            <point key="canvasLocation" x="2658.7786259541986" y="654.92957746478874"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FpN-Bw-aY2">
@@ -350,25 +360,25 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
