@@ -29,8 +29,11 @@ class CaptionedImage: UIView {
     private func setupView() {
         //las vistas en xid se cargan lazy
         
-        //second way: programaticamente
-        guard let contentView = Bundle.main.loadNibNamed("CaptionedImage", owner: self)?.first as? UIView else {return}
+//        third way: with UI Nib
+        guard let contentView = UINib(nibName: "CaptionedImage", bundle: nil).instantiate(withOwner: self).first as? UIView else { return }
+        
+        //second way: desde Bundle
+//        guard let contentView = Bundle.main.loadNibNamed("CaptionedImage", owner: self)?.first as? UIView else {return}
         
 //        First way: con iboutlet contentView
 //        Bundle.main.loadNibNamed("CaptionedImage", owner: self)
