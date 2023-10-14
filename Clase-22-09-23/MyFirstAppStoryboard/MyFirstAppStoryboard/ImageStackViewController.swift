@@ -21,13 +21,16 @@ class ImageStackViewController: UIViewController {
 //      UIImage es un contenedor de imagenes
 //      Crea una imagen teniendo lo que se encuentra dentro de assets con el nombre dog-1
         if showDogs {
-            firstCaptionedImage.imageView.image = UIImage(named: "dog-1")
-            secondCaptionedImage.imageView.image = UIImage(named: "dog-2")
-            thirdCaptionedImage.imageView.image = UIImage(named: "dog-3")
+            firstCaptionedImage.setContent(image: "dog-1", caption: "Dog-1")
+            secondCaptionedImage.setContent(image: "dog-2", caption: nil)
+            thirdCaptionedImage.setContent(image: "dog-3", caption: "Dog-3")
         } else {
-            firstCaptionedImage.imageView.image = UIImage(named: "cat-1")
-            secondCaptionedImage.imageView.image = UIImage(named: "cat-2")
-            thirdCaptionedImage.imageView.image = UIImage(named: "cat-3")
+            firstCaptionedImage.setContent(image: "cat-1", caption: "Cat-1")
+            secondCaptionedImage.setContent(image: "cat-2", caption: "Cat-2")
+            thirdCaptionedImage.setContent(image: "cat-3", caption: "Cat-3")
+//            firstCaptionedImage.imageView.image = UIImage(named: "cat-1")
+//            secondCaptionedImage.imageView.image = UIImage(named: "cat-2")
+//            thirdCaptionedImage.imageView.image = UIImage(named: "cat-3")
         }
     }
 }

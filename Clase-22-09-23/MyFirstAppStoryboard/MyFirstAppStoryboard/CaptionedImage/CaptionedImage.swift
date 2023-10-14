@@ -26,6 +26,13 @@ class CaptionedImage: UIView {
         setupView()
     }
     
+    func setContent(image: String, caption: String?){
+        captionLabel.text = caption
+        captionLabel.isHidden = caption == nil
+        imageView.image = UIImage(named: image)
+        
+    }
+    
     private func setupView() {
         //las vistas en xid se cargan lazy
         
