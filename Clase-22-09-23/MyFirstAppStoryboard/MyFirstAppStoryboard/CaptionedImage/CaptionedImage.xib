@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CaptionedImage" customModule="MyFirstAppStoryboard" customModuleProvider="target">
             <connections>
                 <outlet property="captionLabel" destination="Hgb-Rx-VaA" id="tHS-1a-vG8"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="e8Y-oV-6NY"/>
                 <outlet property="imageView" destination="JvS-oB-ihI" id="em1-jV-9Wr"/>
             </connections>
         </placeholder>
