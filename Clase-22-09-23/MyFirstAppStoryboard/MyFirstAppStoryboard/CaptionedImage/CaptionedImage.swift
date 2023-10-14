@@ -14,7 +14,6 @@ class CaptionedImage: UIView {
     
     //con xids, necesitamos inicializar los elementos o crashea cuando intentas acceder a los outlets
     
-    @IBOutlet weak var contentView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +28,12 @@ class CaptionedImage: UIView {
     
     private func setupView() {
         //las vistas en xid se cargan lazy
-        Bundle.main.loadNibNamed("CaptionedImage", owner: self)
+        
+        //second way: programaticamente
+        guard let contentView = Bundle.main.loadNibNamed("CaptionedImage", owner: self)?.first as? UIView else {return}
+        
+//        First way: con iboutlet contentView
+//        Bundle.main.loadNibNamed("CaptionedImage", owner: self)
         addSubview(contentView)
         //para hacerle saber al compilador que nosotros ponemos los constraints
         contentView.translatesAutoresizingMaskIntoConstraints = false
