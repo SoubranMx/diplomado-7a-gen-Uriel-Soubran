@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     @IBOutlet weak var photoTypeSwitch: UISwitch!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var titleLabelField: UILabel!
@@ -20,27 +20,49 @@ class ViewController: UIViewController {
     @IBOutlet weak var shouldTitleChangeSwitch: UISwitch!
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        segue son las flechas del storyboard, indica para donde ir de una vista a otra
-        guard let destinationViewController = segue.destination as? ImageStackViewController else { return }
-        
-        destinationViewController.showDogs = photoTypeSwitch.isOn
-        
-//        titulos en el navigation bar
-        if shouldTitleChangeSwitch.isOn {
-            destinationViewController.title = titleTextField.text
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+////        segue son las flechas del storyboard, indica para donde ir de una vista a otra
+//        guard let destinationViewController = segue.destination as? ImageStackViewController else { return }
+//        
+//        destinationViewController.showDogs = photoTypeSwitch.isOn
+//        
+//        
+////        titulos en el navigation bar
+//        if shouldTitleChangeSwitch.isOn {
+//            destinationViewController.title = titleTextField.text
+//        }
+//    }
     
     //el que inicia la accion es un UIButton
     @IBAction func nextButtonTapped(_ sender: UIButton) {
 //        diferenciar los botones que usen esta funcion
         if sender.tag == 0 {
             //0 es el boton OpenInfo
-            performSegue(withIdentifier: "SegueFromMainToInfo", sender: nil)
+            //            performSegue(withIdentifier: "SegueFromMainToInfo", sender: nil)
+            segueToInfo()
+            
         } else {
-            performSegue(withIdentifier: "SegueFromMainToPhotos", sender: nil)
+            segueToPhotos()
+//            performSegue(withIdentifier: "SegueFromMainToPhotos", sender: nil)
         }
+    }
+    func segueToInfo(){
+        let infoViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InfoViewController")
+        infoViewController.title = "Info"
+        navigationController?.pushViewController(infoViewController, animated: true)
+//        if shouldTitleChangeSwitch.isOn {
+//            infoViewController.title = titleTextField.text
+//        }
+    }
+    
+    func segueToPhotos(){
+        guard let photosViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ImageStackViewController") as? ImageStackViewController else {return}
+        photosViewController.showDogs = photoTypeSwitch.isOn
+        if shouldTitleChangeSwitch.isOn {
+            photosViewController.title = titleTextField.text
+        }
+        //ya tiene la vista preparada, ahora hay que hacer el segue way
+        navigationController?.pushViewController(photosViewController, animated: true)
     }
     
 //    estos actions pueden ser ejecutados por distintos elementos
@@ -81,7 +103,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITextFieldDelegate {
+extension MainViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if !shouldTitleChangeSwitch.isOn {return false}
         if string == "" {return true}

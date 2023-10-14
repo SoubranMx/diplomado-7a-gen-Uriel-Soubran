@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		5545AF302AD9FBC800B3E8E9 /* CaptionedImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5545AF2F2AD9FBC800B3E8E9 /* CaptionedImage.xib */; };
 		5545AF322AD9FE6600B3E8E9 /* CaptionedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545AF312AD9FE6600B3E8E9 /* CaptionedImage.swift */; };
+		5545AF382ADA1E9900B3E8E9 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5545AF372ADA1E9900B3E8E9 /* MainViewController.xib */; };
 		557F58AF2AC78ACF009DF7B4 /* ImageStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F58AE2AC78ACF009DF7B4 /* ImageStackViewController.swift */; };
 		557F58B12AC7C3E7009DF7B4 /* ShareModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557F58B02AC7C3E7009DF7B4 /* ShareModalViewController.swift */; };
 		55D1B01A2ABE4B5F00AAB2EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B0192ABE4B5F00AAB2EA /* AppDelegate.swift */; };
 		55D1B01C2ABE4B5F00AAB2EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B01B2ABE4B5F00AAB2EA /* SceneDelegate.swift */; };
-		55D1B01E2ABE4B5F00AAB2EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B01D2ABE4B5F00AAB2EA /* ViewController.swift */; };
+		55D1B01E2ABE4B5F00AAB2EA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B01D2ABE4B5F00AAB2EA /* MainViewController.swift */; };
 		55D1B0212ABE4B5F00AAB2EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D1B01F2ABE4B5F00AAB2EA /* Main.storyboard */; };
 		55D1B0262ABE4B6000AAB2EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D1B0242ABE4B6000AAB2EA /* LaunchScreen.storyboard */; };
 		55D1B0312ABE4B6000AAB2EA /* MyFirstAppStoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D1B0302ABE4B6000AAB2EA /* MyFirstAppStoryboardTests.swift */; };
@@ -43,12 +44,13 @@
 /* Begin PBXFileReference section */
 		5545AF2F2AD9FBC800B3E8E9 /* CaptionedImage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaptionedImage.xib; sourceTree = "<group>"; };
 		5545AF312AD9FE6600B3E8E9 /* CaptionedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionedImage.swift; sourceTree = "<group>"; };
+		5545AF372ADA1E9900B3E8E9 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		557F58AE2AC78ACF009DF7B4 /* ImageStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStackViewController.swift; sourceTree = "<group>"; };
 		557F58B02AC7C3E7009DF7B4 /* ShareModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareModalViewController.swift; sourceTree = "<group>"; };
 		55D1B0162ABE4B5F00AAB2EA /* MyFirstAppStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstAppStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D1B0192ABE4B5F00AAB2EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55D1B01B2ABE4B5F00AAB2EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		55D1B01D2ABE4B5F00AAB2EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55D1B01D2ABE4B5F00AAB2EA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		55D1B0202ABE4B5F00AAB2EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55D1B0252ABE4B6000AAB2EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55D1B0272ABE4B6000AAB2EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +97,15 @@
 			path = CaptionedImage;
 			sourceTree = "<group>";
 		};
+		5545AF342ADA1DDF00B3E8E9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				55D1B01D2ABE4B5F00AAB2EA /* MainViewController.swift */,
+				5545AF372ADA1E9900B3E8E9 /* MainViewController.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		55D1B00D2ABE4B5F00AAB2EA = {
 			isa = PBXGroup;
 			children = (
@@ -118,9 +129,9 @@
 		55D1B0182ABE4B5F00AAB2EA /* MyFirstAppStoryboard */ = {
 			isa = PBXGroup;
 			children = (
+				5545AF342ADA1DDF00B3E8E9 /* Main */,
 				55D1B0192ABE4B5F00AAB2EA /* AppDelegate.swift */,
 				55D1B01B2ABE4B5F00AAB2EA /* SceneDelegate.swift */,
-				55D1B01D2ABE4B5F00AAB2EA /* ViewController.swift */,
 				557F58B02AC7C3E7009DF7B4 /* ShareModalViewController.swift */,
 				55D1B01F2ABE4B5F00AAB2EA /* Main.storyboard */,
 				557F58AE2AC78ACF009DF7B4 /* ImageStackViewController.swift */,
@@ -255,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55D1B0262ABE4B6000AAB2EA /* LaunchScreen.storyboard in Resources */,
+				5545AF382ADA1E9900B3E8E9 /* MainViewController.xib in Resources */,
 				55D1B0212ABE4B5F00AAB2EA /* Main.storyboard in Resources */,
 				5545AF302AD9FBC800B3E8E9 /* CaptionedImage.xib in Resources */,
 				55D1B0612ABE7DCE00AAB2EA /* Assets.xcassets in Resources */,
@@ -284,7 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				557F58B12AC7C3E7009DF7B4 /* ShareModalViewController.swift in Sources */,
-				55D1B01E2ABE4B5F00AAB2EA /* ViewController.swift in Sources */,
+				55D1B01E2ABE4B5F00AAB2EA /* MainViewController.swift in Sources */,
 				557F58AF2AC78ACF009DF7B4 /* ImageStackViewController.swift in Sources */,
 				55D1B01A2ABE4B5F00AAB2EA /* AppDelegate.swift in Sources */,
 				55D1B01C2ABE4B5F00AAB2EA /* SceneDelegate.swift in Sources */,
