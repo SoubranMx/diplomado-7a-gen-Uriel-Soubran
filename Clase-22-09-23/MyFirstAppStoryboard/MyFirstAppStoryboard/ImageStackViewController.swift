@@ -33,4 +33,9 @@ class ImageStackViewController: UIViewController {
 //            thirdCaptionedImage.imageView.image = UIImage(named: "cat-3")
         }
     }
+    
+    @IBAction func segueToShare(_ sender: UIBarButtonItem) {
+        let shareViewController = ShareModalViewController()
+        present(shareViewController, animated: true)
+    }
 }
