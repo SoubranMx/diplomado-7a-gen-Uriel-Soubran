@@ -16,11 +16,11 @@
                 <outlet property="PlayerNameTextField" destination="NJF-td-uDZ" id="4df-mt-3Uy"/>
                 <outlet property="PointsPerLoseTextField" destination="Cdv-xB-FHu" id="V2A-Xm-h9h"/>
                 <outlet property="PointsPerWinTextField" destination="Fdy-pw-LO0" id="wJO-lQ-qnJ"/>
+                <outlet property="PointsStackView" destination="cpM-iI-BqQ" id="Isf-do-4kl"/>
                 <outlet property="PointsToWinTextField" destination="xgi-cN-7dO" id="xAx-nr-q8M"/>
-                <outlet property="PointsView" destination="bpy-0g-07y" id="JE3-nI-MOE"/>
                 <outlet property="RoundsCountLabel" destination="kVo-eR-qY0" id="U2Z-Av-t4D"/>
                 <outlet property="RoundsSlider" destination="8jn-Xg-Gde" id="Lgp-yq-KBp"/>
-                <outlet property="RoundsView" destination="9ZY-et-oN5" id="3Yx-uT-KTx"/>
+                <outlet property="RoundsStackView" destination="xk7-0t-5dw" id="yUE-bF-mhw"/>
                 <outlet property="view" destination="Pcn-XX-zSE" id="0MM-kM-TXX"/>
             </connections>
         </placeholder>
@@ -62,6 +62,7 @@
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vY-LN-9tt">
                                     <rect key="frame" x="267.33333333333331" y="0.0" width="86.333333333333314" height="34.333333333333336"/>
+                                    <color key="tintColor" systemColor="systemOrangeColor"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="questionmark.circle.fill" catalog="system" imagePlacement="trailing" title="Info" imagePadding="8"/>
                                 </button>
@@ -80,11 +81,14 @@
                                     <rect key="frame" x="0.0" y="36" width="353.66666666666669" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="onPlayerNameTextChange:" destination="-1" eventType="editingChanged" id="PXd-m2-F92"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RgN-xZ-fGP" userLabel="ConfigsStack">
-                            <rect key="frame" x="19.666666666666657" y="160.33333333333331" width="353.66666666666674" height="833.66666666666674"/>
+                            <rect key="frame" x="19.666666666666657" y="160.33333333333334" width="353.66666666666674" height="369.66666666666663"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ERM-fU-FDq">
                                     <rect key="frame" x="52.999999999999986" y="0.0" width="247.66666666666663" height="32"/>
@@ -96,84 +100,11 @@
                                         <action selector="controlChanged:" destination="-1" eventType="valueChanged" id="g7j-d4-dJ5"/>
                                     </connections>
                                 </segmentedControl>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpy-0g-07y" userLabel="PointsView">
-                                    <rect key="frame" x="17.666666666666657" y="51" width="318.33333333333337" height="381.33333333333331"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xk7-0t-5dw" userLabel="Rounds Stack View">
+                                    <rect key="frame" x="17.333333333333343" y="51.000000000000007" width="319.33333333333326" height="71.666666666666686"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cpM-iI-BqQ">
-                                            <rect key="frame" x="0.0" y="8" width="318.33333333333331" height="227"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cSH-WU-64j">
-                                                    <rect key="frame" x="0.0" y="0.0" width="318.33333333333331" height="65"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points per win" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G62-Vh-XoS" userLabel="PointsPerWinLabel">
-                                                            <rect key="frame" x="98" y="0.0" width="122.33333333333331" height="23"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-pw-LO0" userLabel="PointsPerWinTextField">
-                                                            <rect key="frame" x="47.666666666666657" y="31" width="222.99999999999997" height="34"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                        </textField>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="Fdy-pw-LO0" firstAttribute="width" secondItem="cSH-WU-64j" secondAttribute="width" multiplier="0.7" id="Q8J-PX-Wjf"/>
-                                                    </constraints>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rhf-NN-eh2">
-                                                    <rect key="frame" x="0.0" y="81" width="318.33333333333331" height="65"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points per lose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQX-F3-dfg" userLabel="PointsPerLoseLabel">
-                                                            <rect key="frame" x="95.333333333333314" y="0.0" width="128" height="23"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cdv-xB-FHu" userLabel="PointsPerLoseTextField">
-                                                            <rect key="frame" x="47.666666666666657" y="31" width="222.99999999999997" height="34"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                        </textField>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="Cdv-xB-FHu" firstAttribute="width" secondItem="rhf-NN-eh2" secondAttribute="width" multiplier="0.7" id="RbC-AD-nfb"/>
-                                                    </constraints>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-8t-hWv">
-                                                    <rect key="frame" x="0.0" y="161.99999999999994" width="318.33333333333331" height="65"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points to win" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCX-FG-vwr" userLabel="PointsForWinLabel">
-                                                            <rect key="frame" x="104" y="0.0" width="110.66666666666669" height="23"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xgi-cN-7dO" userLabel="PointsForWinTextField">
-                                                            <rect key="frame" x="47.666666666666657" y="31" width="222.99999999999997" height="34"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                        </textField>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="xgi-cN-7dO" firstAttribute="width" secondItem="0yJ-8t-hWv" secondAttribute="width" multiplier="0.7" id="Z02-Wc-aNB"/>
-                                                    </constraints>
-                                                </stackView>
-                                            </subviews>
-                                        </stackView>
-                                    </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstItem="cpM-iI-BqQ" firstAttribute="centerX" secondItem="bpy-0g-07y" secondAttribute="centerX" id="M9L-Mz-SWR"/>
-                                        <constraint firstItem="cpM-iI-BqQ" firstAttribute="top" secondItem="bpy-0g-07y" secondAttribute="top" constant="8" id="m9N-Wu-A2a"/>
-                                        <constraint firstItem="cpM-iI-BqQ" firstAttribute="width" secondItem="bpy-0g-07y" secondAttribute="width" id="yCR-q3-mdZ"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ZY-et-oN5" userLabel="RoundsView">
-                                    <rect key="frame" x="17.666666666666657" y="452.33333333333337" width="318.33333333333337" height="381.33333333333337"/>
-                                    <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8gE-zk-CGx">
-                                            <rect key="frame" x="87.333333333333343" y="20" width="144" height="21.666666666666671"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="eJm-1e-s6E">
+                                            <rect key="frame" x="88" y="0.0" width="143" height="21.666666666666668"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Rounds to win:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bk2-q4-jHb" userLabel="Label">
                                                     <rect key="frame" x="0.0" y="0.66666666666662877" width="112.33333333333333" height="20.333333333333332"/>
@@ -182,7 +113,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVo-eR-qY0" userLabel="RoundsCounterLabel">
-                                                    <rect key="frame" x="132.33333333333331" y="0.0" width="11.666666666666657" height="21.666666666666668"/>
+                                                    <rect key="frame" x="131.33333333333331" y="0.0" width="11.666666666666657" height="21.666666666666668"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -190,30 +121,90 @@
                                             </subviews>
                                         </stackView>
                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="8jn-Xg-Gde" userLabel="RoundsSlider">
-                                            <rect key="frame" x="14" y="66.666666666666629" width="290.33333333333331" height="31"/>
+                                            <rect key="frame" x="-2" y="41.666666666666629" width="323.33333333333331" height="31"/>
+                                            <color key="tintColor" systemColor="systemOrangeColor"/>
                                             <connections>
                                                 <action selector="onSliderChange:" destination="-1" eventType="valueChanged" id="1wJ-pg-wLr"/>
                                             </connections>
                                         </slider>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstItem="8jn-Xg-Gde" firstAttribute="width" secondItem="9ZY-et-oN5" secondAttribute="width" multiplier="0.9" id="2Is-eY-sow"/>
-                                        <constraint firstItem="8gE-zk-CGx" firstAttribute="top" secondItem="9ZY-et-oN5" secondAttribute="top" constant="20" id="8gD-8T-9UX"/>
-                                        <constraint firstItem="8gE-zk-CGx" firstAttribute="centerX" secondItem="9ZY-et-oN5" secondAttribute="centerX" id="9IB-KM-UuJ"/>
-                                        <constraint firstItem="8jn-Xg-Gde" firstAttribute="top" secondItem="8gE-zk-CGx" secondAttribute="bottom" constant="25" id="Ho1-uw-Pkt"/>
-                                        <constraint firstItem="8jn-Xg-Gde" firstAttribute="centerX" secondItem="9ZY-et-oN5" secondAttribute="centerX" id="h6J-J4-vZW"/>
+                                        <constraint firstItem="8jn-Xg-Gde" firstAttribute="leading" secondItem="xk7-0t-5dw" secondAttribute="leading" id="Wjf-rK-UTa"/>
+                                        <constraint firstAttribute="trailing" secondItem="8jn-Xg-Gde" secondAttribute="trailing" id="xnu-1n-dvg"/>
                                     </constraints>
-                                </view>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cpM-iI-BqQ" userLabel="Points Stack View">
+                                    <rect key="frame" x="17.666666666666657" y="142.66666666666663" width="318.33333333333337" height="227"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cSH-WU-64j">
+                                            <rect key="frame" x="0.0" y="0.0" width="318.33333333333331" height="65"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points per win" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G62-Vh-XoS" userLabel="PointsPerWinLabel">
+                                                    <rect key="frame" x="98" y="0.0" width="122.33333333333331" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-pw-LO0" userLabel="PointsPerWinTextField">
+                                                    <rect key="frame" x="47.666666666666657" y="31" width="222.99999999999997" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Fdy-pw-LO0" firstAttribute="width" secondItem="cSH-WU-64j" secondAttribute="width" multiplier="0.7" id="Q8J-PX-Wjf"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rhf-NN-eh2">
+                                            <rect key="frame" x="0.0" y="81.000000000000057" width="318.33333333333331" height="65"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points per lose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQX-F3-dfg" userLabel="PointsPerLoseLabel">
+                                                    <rect key="frame" x="95.333333333333314" y="0.0" width="128" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Cdv-xB-FHu" userLabel="PointsPerLoseTextField">
+                                                    <rect key="frame" x="47.666666666666657" y="31" width="222.99999999999997" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Cdv-xB-FHu" firstAttribute="width" secondItem="rhf-NN-eh2" secondAttribute="width" multiplier="0.7" id="RbC-AD-nfb"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-8t-hWv">
+                                            <rect key="frame" x="0.0" y="162.00000000000006" width="318.33333333333331" height="65"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points to win" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCX-FG-vwr" userLabel="PointsForWinLabel">
+                                                    <rect key="frame" x="104" y="0.0" width="110.66666666666669" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xgi-cN-7dO" userLabel="PointsForWinTextField">
+                                                    <rect key="frame" x="47.666666666666657" y="31" width="222.99999999999997" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xgi-cN-7dO" firstAttribute="width" secondItem="0yJ-8t-hWv" secondAttribute="width" multiplier="0.7" id="Z02-Wc-aNB"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="bpy-0g-07y" firstAttribute="width" secondItem="RgN-xZ-fGP" secondAttribute="width" multiplier="0.9" id="BZh-45-rlq"/>
                                 <constraint firstItem="ERM-fU-FDq" firstAttribute="width" secondItem="RgN-xZ-fGP" secondAttribute="width" multiplier="0.7" id="FH4-SV-yVe"/>
-                                <constraint firstItem="9ZY-et-oN5" firstAttribute="width" secondItem="RgN-xZ-fGP" secondAttribute="width" multiplier="0.9" id="Fzl-nl-X41"/>
+                                <constraint firstItem="cpM-iI-BqQ" firstAttribute="width" secondItem="RgN-xZ-fGP" secondAttribute="width" multiplier="0.9" id="PWV-T3-4fE"/>
+                                <constraint firstItem="xk7-0t-5dw" firstAttribute="width" secondItem="RgN-xZ-fGP" secondAttribute="width" multiplier="0.9" constant="1" id="XtF-tg-crR"/>
                             </constraints>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Br-4j-6wl">
                             <rect key="frame" x="130.33333333333331" y="625.33333333333326" width="132.33333333333331" height="34.333333333333371"/>
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" image="play.fill" catalog="system" title="Play Game" imagePadding="8"/>
                         </button>
