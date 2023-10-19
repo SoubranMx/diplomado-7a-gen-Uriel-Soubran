@@ -65,6 +65,9 @@
                                     <color key="tintColor" systemColor="systemOrangeColor"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="questionmark.circle.fill" catalog="system" imagePlacement="trailing" title="Info" imagePadding="8"/>
+                                    <connections>
+                                        <action selector="segueButtonTapped:" destination="-1" eventType="touchUpInside" id="EYN-p0-nsU"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -202,11 +205,14 @@
                                 <constraint firstItem="xk7-0t-5dw" firstAttribute="width" secondItem="RgN-xZ-fGP" secondAttribute="width" multiplier="0.9" constant="1" id="XtF-tg-crR"/>
                             </constraints>
                         </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Br-4j-6wl">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Br-4j-6wl">
                             <rect key="frame" x="130.33333333333331" y="625.33333333333326" width="132.33333333333331" height="34.333333333333371"/>
                             <color key="tintColor" systemColor="systemOrangeColor"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" image="play.fill" catalog="system" title="Play Game" imagePadding="8"/>
+                            <connections>
+                                <action selector="segueButtonTapped:" destination="-1" eventType="touchUpInside" id="tNd-aP-nzw"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

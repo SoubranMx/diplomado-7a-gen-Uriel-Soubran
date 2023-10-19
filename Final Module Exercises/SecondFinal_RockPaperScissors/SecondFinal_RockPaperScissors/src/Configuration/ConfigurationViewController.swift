@@ -46,6 +46,7 @@ class ConfigurationViewController: UIViewController {
         RoundsStackView.isHidden = true
         PlayButton.tintColor = UIColor.systemOrange
         PlayButton.isHidden = true
+        PlayButton.tintColor = UIColor.systemOrange
         RoundsCountLabel.text = "\(Int(RoundsSlider.value))"
         PlayerNameTextField.text = ""
         PointsPerWinTextField.text = ""
@@ -99,16 +100,24 @@ class ConfigurationViewController: UIViewController {
         decidePlayButtonVisibility()
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func segueButtonTapped(_ sender: UIButton) {
+        if sender.tag == 0 {
+            segueToInfo()
+        } else {
+            segueToGame()
+        }
     }
-    */
+    
+    func segueToInfo() {
+        print("Segue way to Info/rules")
+         // Present View "Modally"
+        let infoViewController = InfoViewController()
+        present(infoViewController, animated: true)
+    }
+    
+    func segueToGame() {
+        print("Segue way to Game")
+    }
 
 }
 
