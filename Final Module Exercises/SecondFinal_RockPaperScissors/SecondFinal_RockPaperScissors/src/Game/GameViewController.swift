@@ -53,7 +53,7 @@ class GameViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Prepara segue way")
+        print("Prepare segue way to History")
         guard let historyViewController = segue.destination as? HistoryViewController else {return}
         
         var textForHistoryView = ""
@@ -87,7 +87,6 @@ class GameViewController: UIViewController {
         
         var machineSelection: handOption = .paper
         let randomInt = Int.random(in: 0..<3)
-        print(randomInt)
         switch randomInt {
         case 0: 
             machineSelection = .rock
