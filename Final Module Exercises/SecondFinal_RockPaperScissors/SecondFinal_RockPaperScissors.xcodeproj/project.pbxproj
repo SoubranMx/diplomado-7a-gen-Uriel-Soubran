@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		069989CD2AE20FF6000812F6 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069989CC2AE20FF6000812F6 /* HistoryViewController.swift */; };
 		556237E62ADAFA4400C7787A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556237E52ADAFA4400C7787A /* AppDelegate.swift */; };
 		556237E82ADAFA4400C7787A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556237E72ADAFA4400C7787A /* SceneDelegate.swift */; };
 		556237EF2ADAFA4500C7787A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556237EE2ADAFA4500C7787A /* Assets.xcassets */; };
@@ -19,8 +20,6 @@
 		556238222ADAFE8C00C7787A /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556238202ADAFE8C00C7787A /* ConfigurationViewController.swift */; };
 		556238232ADAFE8C00C7787A /* ConfigurationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556238212ADAFE8C00C7787A /* ConfigurationViewController.xib */; };
 		556238252ADAFEAB00C7787A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556238242ADAFEAB00C7787A /* InfoViewController.swift */; };
-		556238282ADAFEC900C7787A /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556238262ADAFEC900C7787A /* HistoryViewController.swift */; };
-		556238292ADAFEC900C7787A /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 556238272ADAFEC900C7787A /* HistoryViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		069989CC2AE20FF6000812F6 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		556237E22ADAFA4400C7787A /* SecondFinal_RockPaperScissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondFinal_RockPaperScissors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556237E52ADAFA4400C7787A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		556237E72ADAFA4400C7787A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,8 +57,6 @@
 		556238202ADAFE8C00C7787A /* ConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
 		556238212ADAFE8C00C7787A /* ConfigurationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigurationViewController.xib; sourceTree = "<group>"; };
 		556238242ADAFEAB00C7787A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		556238262ADAFEC900C7787A /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		556238272ADAFEC900C7787A /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +137,6 @@
 		556238152ADAFC2C00C7787A /* src */ = {
 			isa = PBXGroup;
 			children = (
-				556238192ADAFDE600C7787A /* History */,
 				556238182ADAFDDA00C7787A /* Game */,
 				556238172ADAFDD200C7787A /* Info */,
 				556238162ADAFDC600C7787A /* Configuration */,
@@ -169,17 +166,9 @@
 			children = (
 				5562381A2ADAFE0300C7787A /* GameViewController.storyboard */,
 				5562381C2ADAFE2500C7787A /* GameViewController.swift */,
+				069989CC2AE20FF6000812F6 /* HistoryViewController.swift */,
 			);
 			path = Game;
-			sourceTree = "<group>";
-		};
-		556238192ADAFDE600C7787A /* History */ = {
-			isa = PBXGroup;
-			children = (
-				556238262ADAFEC900C7787A /* HistoryViewController.swift */,
-				556238272ADAFEC900C7787A /* HistoryViewController.xib */,
-			);
-			path = History;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +279,6 @@
 				556238232ADAFE8C00C7787A /* ConfigurationViewController.xib in Resources */,
 				5562381B2ADAFE0300C7787A /* GameViewController.storyboard in Resources */,
 				556237EF2ADAFA4500C7787A /* Assets.xcassets in Resources */,
-				556238292ADAFEC900C7787A /* HistoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,8 +306,8 @@
 				5562381D2ADAFE2500C7787A /* GameViewController.swift in Sources */,
 				556237E62ADAFA4400C7787A /* AppDelegate.swift in Sources */,
 				556238222ADAFE8C00C7787A /* ConfigurationViewController.swift in Sources */,
+				069989CD2AE20FF6000812F6 /* HistoryViewController.swift in Sources */,
 				556238252ADAFEAB00C7787A /* InfoViewController.swift in Sources */,
-				556238282ADAFEC900C7787A /* HistoryViewController.swift in Sources */,
 				556237E82ADAFA4400C7787A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

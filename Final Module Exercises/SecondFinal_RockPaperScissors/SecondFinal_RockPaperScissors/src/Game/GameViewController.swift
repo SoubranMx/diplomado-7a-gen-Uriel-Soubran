@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var paperButton: UIButton!
     @IBOutlet weak var scissorButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
+    var gameHistory = [String]()
     var playersName = String()
     var gameMode: ConfigurationViewController.gameMode? = nil
     var selectedOption: handOption = .paper
@@ -44,6 +45,27 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    
+    @IBAction func historyButtonTapped(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "SegueFromGameToHistory", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("Prepara segue way")
+        guard let historyViewController = segue.destination as? HistoryViewController else {return}
+        
+        var textForHistoryView = ""
+        var roundIndex = 1
+        gameHistory.forEach {
+            item in
+            textForHistoryView += "\(roundIndex): \(item)\n"
+            roundIndex += 1
+        }
+        historyViewController.outsideHistoryText = textForHistoryView
+        historyViewController.outsideModalTitle = gameMode == .rounds ? "\(playersName)'s Game History\nMode: Rounds" : "\(playersName)'s Game History\nMode: Points"
+        
     }
     
     func compareSelections(playerSelection: handOption, machineSelection: handOption) -> compareResult {
@@ -96,11 +118,11 @@ class GameViewController: UIViewController {
 //        change bgColor for both .points or .rounds and show result label
         if result == .win {
             view.backgroundColor = .systemGreen
-            resultLabel.text = "\(playersName) won!"
+            resultLabel.text = "\(playersName), you won this round!"
         }
         else if result == .lose {
             view.backgroundColor = .systemRed
-            resultLabel.text = "\(playersName) lose!"
+            resultLabel.text = "\(playersName), you lose this round!"
         }
         else {
             view.backgroundColor = .systemBrown
@@ -110,12 +132,28 @@ class GameViewController: UIViewController {
         
 //        change labels to show points / rounds
         if(gameMode == .points) {
-            if(result == .win) { pointsCounter += pointsPerWin }
-            else if (result == .lose) { pointsCounter = pointsCounter - pointsPerLose < 0 ? 0 : pointsCounter - pointsPerLose }
+            if(result == .win) {
+                pointsCounter += pointsPerWin
+                gameHistory.append("\(playersName) won, \(pointsPerWin) added, total points = \(pointsCounter)")
+            }
+            else if (result == .lose) {
+                pointsCounter = pointsCounter - pointsPerLose < 0 ? 0 : pointsCounter - pointsPerLose
+                gameHistory.append("\(playersName) lose, \(pointsPerLose) discounted, total points = \(pointsCounter)")
+            }
+            else {
+                gameHistory.append("\(playersName) tied, total points = \(pointsCounter)")
+            }
             
             if( pointsCounter >= pointsToWin) { showWinAlert() }
         } else {
-            if result == .win { currentRound += 1 }
+            if result == .win {
+                currentRound += 1
+                gameHistory.append("\(playersName) won this round, win rounds = \(currentRound)")
+            } else if result == .lose {
+                gameHistory.append("\(playersName) lost this round")
+            } else {
+                gameHistory.append("\(playersName) got a tie in this round.")
+            }
             if currentRound >= goalRounds { showWinAlert() }
         }
     }

@@ -138,6 +138,9 @@
                         <barButtonItem key="rightBarButtonItem" title="History" id="OR3-Nr-ClM">
                             <imageReference key="image" image="chart.bar.doc.horizontal.fill" catalog="system" symbolScale="large" renderingMode="original" variableValue="0.60000000000000009"/>
                             <color key="tintColor" systemColor="systemOrangeColor"/>
+                            <connections>
+                                <action selector="historyButtonTapped:" destination="Y6W-OH-hqX" id="66J-B5-a86"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -150,11 +153,55 @@
                         <outlet property="resultLabel" destination="CK5-j6-Y1t" id="kcL-09-yYt"/>
                         <outlet property="rockButton" destination="JQ5-rz-TBO" id="gCe-qk-hv8"/>
                         <outlet property="scissorButton" destination="7O1-lW-Qyp" id="IL6-zo-Ach"/>
+                        <segue destination="XOE-RB-2r9" kind="presentation" identifier="SegueFromGameToHistory" id="hqt-tv-5aB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="991.60305343511448" y="-2.1126760563380285"/>
+        </scene>
+        <!--Game's History-->
+        <scene sceneID="Nx5-eZ-Bg1">
+            <objects>
+                <viewController storyboardIdentifier="HistoryView" title="Game's History" id="XOE-RB-2r9" customClass="HistoryViewController" customModule="SecondFinal_RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G1F-Vf-S4i">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ni4-WK-Brh">
+                                <rect key="frame" x="12" y="78.666666666666686" width="369" height="713.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhv-Kf-gMd">
+                                <rect key="frame" x="174.33333333333334" y="20" width="44.333333333333343" height="28.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DJQ-2W-RTR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ni4-WK-Brh" firstAttribute="centerX" secondItem="G1F-Vf-S4i" secondAttribute="centerX" id="H0b-7f-eiA"/>
+                            <constraint firstItem="Ni4-WK-Brh" firstAttribute="top" secondItem="Bhv-Kf-gMd" secondAttribute="bottom" constant="30" id="Mel-hQ-olA"/>
+                            <constraint firstItem="DJQ-2W-RTR" firstAttribute="bottom" secondItem="Ni4-WK-Brh" secondAttribute="bottom" constant="50" id="ONQ-5W-872"/>
+                            <constraint firstItem="Bhv-Kf-gMd" firstAttribute="top" secondItem="DJQ-2W-RTR" secondAttribute="top" constant="20" id="SYL-tE-foX"/>
+                            <constraint firstItem="Bhv-Kf-gMd" firstAttribute="centerX" secondItem="G1F-Vf-S4i" secondAttribute="centerX" id="WRr-Yu-bsG"/>
+                            <constraint firstItem="Ni4-WK-Brh" firstAttribute="leading" secondItem="DJQ-2W-RTR" secondAttribute="leading" constant="12" id="bvy-ox-6L1"/>
+                            <constraint firstItem="DJQ-2W-RTR" firstAttribute="trailing" secondItem="Ni4-WK-Brh" secondAttribute="trailing" constant="12" id="xu3-Zs-xiP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="historyTextView" destination="Ni4-WK-Brh" id="EeZ-td-6vd"/>
+                        <outlet property="modalTitle" destination="Bhv-Kf-gMd" id="OPk-vH-DbF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SUe-Ih-Zvz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1873" y="-2"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="quV-bP-zSL">
@@ -177,6 +224,9 @@
     </scenes>
     <resources>
         <image name="chart.bar.doc.horizontal.fill" catalog="system" width="115" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
