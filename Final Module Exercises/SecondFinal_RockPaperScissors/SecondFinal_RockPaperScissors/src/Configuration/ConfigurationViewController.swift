@@ -20,25 +20,28 @@ class ConfigurationViewController: UIViewController {
             PointsPerWinTextField.delegate = self
         }
     }
+    var pointsPerWin = Int();
     @IBOutlet weak var PointsPerLoseTextField: UITextField! {
         didSet {
             PointsPerLoseTextField.delegate = self
         }
     }
+    var pointsPerLose = Int();
     @IBOutlet weak var PointsToWinTextField: UITextField! {
         didSet {
             PointsToWinTextField.delegate = self
         }
     }
+    var pointsToWin = Int();
     @IBOutlet weak var RoundsSlider: UISlider!
     @IBOutlet weak var RoundsCountLabel: UILabel!
     
     //To not have errors when writting the value of selectedMode, such as "Points" over "points", or miss spelled text, make it an enum
-    enum mode: String{
+    enum gameMode: String{
         case points
         case rounds
     }
-    var selectedMode: mode = .points;
+    var selectedMode: gameMode = .points;
     
     
     
@@ -117,6 +120,26 @@ class ConfigurationViewController: UIViewController {
     
     func segueToGame() {
         print("Segue way to Game")
+//        Get the GameViewController and prepare it's data, if it's not found, don't crash.
+        guard let gameViewController = UIStoryboard(name: "GameViewController", bundle: nil).instantiateViewController(withIdentifier: "Game View") as? GameViewController else { return }
+        
+//        Set independent variables
+        gameViewController.title = selectedMode == .points
+        ? "Game By Points"
+        : "Game By Rounds"
+        gameViewController.gameMode = selectedMode
+        gameViewController.playersName = PlayerNameTextField.text ?? ""
+        
+//        Set byRounds variables
+        gameViewController.goalRounds = selectedMode == .rounds ? Int(RoundsSlider.value) : 0
+        
+//        Set byPoints variables
+        gameViewController.pointsPerWin = selectedMode == .points ? Int(PointsPerWinTextField.text ?? "0")! : 0
+        gameViewController.pointsPerLose = selectedMode == .points ? Int(PointsPerLoseTextField.text ?? "0")! : 0
+        gameViewController.pointsToWin = selectedMode == .points ? Int(PointsToWinTextField.text ?? "0")! : 0
+        
+//        Push the GameViewController
+        navigationController?.pushViewController(gameViewController, animated: true)
     }
 
 }
@@ -124,21 +147,26 @@ class ConfigurationViewController: UIViewController {
 extension ConfigurationViewController: UITextFieldDelegate {
 //    to know when the textField is being edited
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        switch textField.tag {
-        case 0:
-            PointsPerWinTextField.text = textField.text
-            break
-        case 1:
-            PointsPerLoseTextField.text = textField.text
-            break
-        case 2:
-            PointsToWinTextField.text = textField.text
-            break
-        default:
-            return
+        if let fieldString = textField.text {
+            switch textField.tag {
+            case 0:
+                PointsPerWinTextField.text = fieldString
+                pointsPerWin = Int(fieldString) ?? 0
+                break
+            case 1:
+                PointsPerLoseTextField.text = fieldString
+                pointsPerLose = Int(fieldString) ?? 0
+                break
+            case 2:
+                PointsToWinTextField.text = fieldString
+                pointsToWin = Int(fieldString) ?? 0
+                break
+            default:
+                return
+            }
+            
+            decidePlayButtonVisibility()
         }
-        
-        decidePlayButtonVisibility()
     }
     
 //    to control what kind of text the textField accepts
@@ -146,7 +174,7 @@ extension ConfigurationViewController: UITextFieldDelegate {
 //        allow backspace to edit
         if string == "" {return true}
 //        only allow digits
-        if let x = string.rangeOfCharacter(from: NSCharacterSet.decimalDigits) {
+        if let _ = string.rangeOfCharacter(from: NSCharacterSet.decimalDigits) {
             return true
         } else {
             return false
