@@ -159,7 +159,7 @@ class GameViewController: UIViewController {
     
     func showWinAlert(){
         updateVarsOnWin()
-        let dialogMessage = UIAlertController(title: "You won!", message: "Congrats on winning, \(playersName). Your score is saved.", preferredStyle: .alert)
+        let dialogMessage = UIAlertController(title: "You won!", message: "Congrats on winning, \(playersName). You can view this game history by clicking the top right button.", preferredStyle: .alert)
         // Create OK button with action handler
          let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
              print("Ok button tapped")

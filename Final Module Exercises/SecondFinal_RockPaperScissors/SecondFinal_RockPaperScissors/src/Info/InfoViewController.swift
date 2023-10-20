@@ -40,7 +40,7 @@ class InfoViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 5
-        label.text = "Move the slider to set the number of rounds you will play.\nThe game will finish once that number of rounds are met."
+        label.text = "Move the slider to set the number of win rounds you will play.\nThe game will finish once that number of rounds are met."
         return label
     }()
     
