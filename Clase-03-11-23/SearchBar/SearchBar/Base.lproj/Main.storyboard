@@ -62,21 +62,65 @@
             </objects>
             <point key="canvasLocation" x="1993.1297709923663" y="3.5211267605633805"/>
         </scene>
-        <!--Otro-->
+        <!--Collection-->
         <scene sceneID="Fb1-0r-AQ4">
             <objects>
-                <viewController id="4q2-eA-Qpg" sceneMemberID="viewController">
+                <viewController id="4q2-eA-Qpg" customClass="CollectionViewController" customModule="SearchBar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qbu-Li-BVb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aMS-tz-dNe">
+                                <rect key="frame" x="0.0" y="103" width="393" height="581"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="wBB-Fk-1oa">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Z8e-Hu-qgt">
+                                <rect key="frame" x="12" y="725" width="369" height="34.333333333333371"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOc-lx-GIw">
+                                        <rect key="frame" x="0.0" y="0.0" width="302.33333333333331" height="34.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJC-wO-czh">
+                                        <rect key="frame" x="314.33333333333331" y="0.0" width="54.666666666666686" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                                        <connections>
+                                            <action selector="onAddButtonTapped:" destination="4q2-eA-Qpg" eventType="touchUpInside" id="ZGL-4V-vCo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="c8E-NQ-kg2"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="c8E-NQ-kg2" firstAttribute="trailing" secondItem="aMS-tz-dNe" secondAttribute="trailing" id="17j-2W-MyJ"/>
+                            <constraint firstItem="c8E-NQ-kg2" firstAttribute="bottom" secondItem="Z8e-Hu-qgt" secondAttribute="bottom" constant="9.6699999999999999" id="5jO-dy-mUQ"/>
+                            <constraint firstItem="Z8e-Hu-qgt" firstAttribute="leading" secondItem="c8E-NQ-kg2" secondAttribute="leading" constant="12" id="FL7-ep-BY5"/>
+                            <constraint firstItem="c8E-NQ-kg2" firstAttribute="bottom" secondItem="aMS-tz-dNe" secondAttribute="bottom" constant="85" id="GRX-9f-GrI"/>
+                            <constraint firstItem="aMS-tz-dNe" firstAttribute="leading" secondItem="c8E-NQ-kg2" secondAttribute="leading" id="bwp-uN-gho"/>
+                            <constraint firstItem="aMS-tz-dNe" firstAttribute="top" secondItem="c8E-NQ-kg2" secondAttribute="top" id="h99-SM-dol"/>
+                            <constraint firstItem="c8E-NQ-kg2" firstAttribute="trailing" secondItem="Z8e-Hu-qgt" secondAttribute="trailing" constant="12" id="ir8-5d-lDD"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Otro" image="circle.dotted.circle" catalog="system" selectedImage="circle.dotted.circle.fill" id="znY-ac-mWV"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="circle.dotted.circle" catalog="system" selectedImage="circle.dotted.circle.fill" id="znY-ac-mWV"/>
+                    <connections>
+                        <outlet property="collectionView" destination="aMS-tz-dNe" id="MlI-jn-6p9"/>
+                        <outlet property="textField" destination="eOc-lx-GIw" id="Lwe-2P-uc6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEm-ez-hqT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993" y="751"/>
+            <point key="canvasLocation" x="1991.6030534351144" y="750.70422535211276"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1oo-dZ-U3k">
@@ -123,6 +167,9 @@
         <image name="tablecells.fill" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

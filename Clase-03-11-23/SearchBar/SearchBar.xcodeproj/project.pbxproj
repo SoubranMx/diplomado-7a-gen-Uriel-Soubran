@@ -16,6 +16,9 @@
 		55F975DC2AF5B0F10025DD32 /* SearchBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F975DB2AF5B0F10025DD32 /* SearchBarTests.swift */; };
 		55F975E62AF5B0F10025DD32 /* SearchBarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F975E52AF5B0F10025DD32 /* SearchBarUITests.swift */; };
 		55F975E82AF5B0F10025DD32 /* SearchBarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F975E72AF5B0F10025DD32 /* SearchBarUITestsLaunchTests.swift */; };
+		55F975F52AF5B7F70025DD32 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F975F42AF5B7F70025DD32 /* CollectionViewController.swift */; };
+		55F975F82AF5BAA70025DD32 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F975F62AF5BAA70025DD32 /* CustomCollectionViewCell.swift */; };
+		55F975F92AF5BAA70025DD32 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55F975F72AF5BAA70025DD32 /* CustomCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		55F975E12AF5B0F10025DD32 /* SearchBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F975E52AF5B0F10025DD32 /* SearchBarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarUITests.swift; sourceTree = "<group>"; };
 		55F975E72AF5B0F10025DD32 /* SearchBarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		55F975F42AF5B7F70025DD32 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		55F975F62AF5BAA70025DD32 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		55F975F72AF5BAA70025DD32 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				55F975CD2AF5B0F10025DD32 /* Assets.xcassets */,
 				55F975CF2AF5B0F10025DD32 /* LaunchScreen.storyboard */,
 				55F975D22AF5B0F10025DD32 /* Info.plist */,
+				55F975F42AF5B7F70025DD32 /* CollectionViewController.swift */,
+				55F975F62AF5BAA70025DD32 /* CustomCollectionViewCell.swift */,
+				55F975F72AF5BAA70025DD32 /* CustomCollectionViewCell.xib */,
 			);
 			path = SearchBar;
 			sourceTree = "<group>";
@@ -234,6 +243,7 @@
 				55F975D12AF5B0F10025DD32 /* LaunchScreen.storyboard in Resources */,
 				55F975CE2AF5B0F10025DD32 /* Assets.xcassets in Resources */,
 				55F975CC2AF5B0F00025DD32 /* Main.storyboard in Resources */,
+				55F975F92AF5BAA70025DD32 /* CustomCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F975F52AF5B7F70025DD32 /* CollectionViewController.swift in Sources */,
+				55F975F82AF5BAA70025DD32 /* CustomCollectionViewCell.swift in Sources */,
 				55F975C92AF5B0F00025DD32 /* ViewController.swift in Sources */,
 				55F975C52AF5B0F00025DD32 /* AppDelegate.swift in Sources */,
 				55F975C72AF5B0F00025DD32 /* SceneDelegate.swift in Sources */,
