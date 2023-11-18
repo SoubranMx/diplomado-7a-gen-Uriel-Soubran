@@ -78,5 +78,13 @@ extension PokemonLocationViewController: PokemonLocationViewModelDelegate {
         mapView.region = mapRegion
     }
     
-    
+    func shouldShowNoPermissionsAlert() {
+        let alert = UIAlertController(title: "Location Permission", message: "Please update the location permission in Settings", preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Ok", style: .default){
+            [weak self] _ in
+            self?.dismissModal()
+        }
+        alert.addAction(dismissAction)
+        present(alert, animated: true)
+    }
 }

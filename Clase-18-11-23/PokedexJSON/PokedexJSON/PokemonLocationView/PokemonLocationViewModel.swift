@@ -10,6 +10,7 @@ import CoreLocation
 
 protocol PokemonLocationViewModelDelegate: AnyObject {
     func updateUserLocation(with coordinate: CLLocationCoordinate2D)
+    func shouldShowNoPermissionsAlert()
 }
 
 class PokemonLocationViewModel: NSObject {
@@ -37,5 +38,12 @@ extension PokemonLocationViewModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let currentLocation = locations.last else {return}
         self.userLocation = currentLocation.coordinate
+    }
+//    location manager calls this, or every time this is instantiated
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        if manager.authorizationStatus == .denied {
+//            dismiss modal
+            delegate?.shouldShowNoPermissionsAlert()
+        }
     }
 }
