@@ -38,7 +38,6 @@
                             <constraint firstItem="cbd-Us-gu3" firstAttribute="top" secondItem="Uek-Eg-x1x" secondAttribute="top" constant="16" id="UGb-MF-26s"/>
                             <constraint firstAttribute="trailing" secondItem="cbd-Us-gu3" secondAttribute="trailing" constant="30" id="dOn-Qh-Til"/>
                             <constraint firstAttribute="bottom" secondItem="fWg-jw-zR6" secondAttribute="bottom" constant="16" id="qdt-2S-vNa"/>
-                            <constraint firstItem="fWg-jw-zR6" firstAttribute="top" secondItem="cbd-Us-gu3" secondAttribute="bottom" constant="16" id="vhk-xQ-rTg"/>
                             <constraint firstAttribute="trailing" secondItem="fWg-jw-zR6" secondAttribute="trailing" constant="16" id="xe2-Go-gzK"/>
                         </constraints>
                     </view>
