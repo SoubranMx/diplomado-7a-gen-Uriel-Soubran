@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSFaceIDUsageDescription</key>
+	<string>We need this to validate that it is you to view your favorites</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We want to show you the location of the Pokemon nearby.</string>
 	<key>UIApplicationSceneManifest</key>
