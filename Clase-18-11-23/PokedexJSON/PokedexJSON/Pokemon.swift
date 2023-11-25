@@ -17,7 +17,7 @@ struct Pokemon: Codable, Hashable {
     let weight: String
     let height: String
     let weaknesses: [String]
-    let previousEvolution: String
+    let previousEvolution: [Evolution]?
     let location: Location?
     
     private enum CodingKeys: String, CodingKey {
