@@ -7,190 +7,128 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5385DEB0-9D01-4EB3-819B-CF06DD626D06"
-            shouldBeEnabled = "Yes"
+            uuid = "A90B1D5F-E761-4DE3-9F0B-2B2EA8A0967B"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PokedexJSON/PokemonDetailView/PokemonDetailViewController.swift"
+            filePath = "PokedexJSON/PokemonListView/PokemonListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "setupView()"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "tableView(_:trailingSwipeActionsConfigurationForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B77B4AE8-66D3-4898-9BFA-E61BF6185F0E"
-            shouldBeEnabled = "Yes"
+            uuid = "50A21532-97E6-496C-9572-9BD862592393"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PokedexJSON/PokemonDetailView/PokemonDetailViewController.swift"
+            filePath = "PokedexJSON/PokemonListView/PokemonListTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "setupView()"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "tableView(_:trailingSwipeActionsConfigurationForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C5912314-8A24-4877-A554-F017B0C8B426"
-            shouldBeEnabled = "Yes"
+            uuid = "D32A47AE-5E38-4DD6-B18E-A9E4FF3F135C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokedexJSON/PokemonListView/PokemonListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "tableView(_:trailingSwipeActionsConfigurationForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58970384-BB27-4EC1-B167-4C30FD2D3434"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokedexJSON/PokemonListView/PokemonListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "init()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C5912314-8A24-4877-A554-F017B0C8B426 - f6e3199f4518ccce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokedexJSON.PokemonListViewModel.init() -&gt; PokedexJSON.PokemonListViewModel"
-                  moduleName = "PokedexJSON"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/diplomado/Documents/dev/diplomado-7a-gen-Uriel-Soubran/Clase-18-11-23/PokedexJSON/PokedexJSON/PokemonListView/PokemonListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "292">
-               </Location>
-               <Location
-                  uuid = "C5912314-8A24-4877-A554-F017B0C8B426 - f6e3199f4518ccce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokedexJSON.PokemonListViewModel.init() -&gt; PokedexJSON.PokemonListViewModel"
-                  moduleName = "PokedexJSON"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/diplomado/Documents/dev/diplomado-7a-gen-Uriel-Soubran/Clase-18-11-23/PokedexJSON/PokedexJSON/PokemonListView/PokemonListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "336">
-               </Location>
-               <Location
-                  uuid = "C5912314-8A24-4877-A554-F017B0C8B426 - f6e3199f4518ccce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokedexJSON.PokemonListViewModel.init() -&gt; PokedexJSON.PokemonListViewModel"
-                  moduleName = "PokedexJSON"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/diplomado/Documents/dev/diplomado-7a-gen-Uriel-Soubran/Clase-18-11-23/PokedexJSON/PokedexJSON/PokemonListView/PokemonListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "340">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C9CA4958-8880-4601-87CF-5DD9A2857D6E"
+            uuid = "14DC34B4-A384-4137-93A7-8CCB40A30A94"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokedexJSON/PokemonListView/PokemonListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "loadData()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C9CA4958-8880-4601-87CF-5DD9A2857D6E - 410539bba091d2a2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokedexJSON.PokemonListViewModel.loadData() -&gt; ()"
-                  moduleName = "PokedexJSON"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/diplomado/Documents/dev/diplomado-7a-gen-Uriel-Soubran/Clase-18-11-23/PokedexJSON/PokedexJSON/PokemonListView/PokemonListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "288">
-               </Location>
-               <Location
-                  uuid = "C9CA4958-8880-4601-87CF-5DD9A2857D6E - 410539bba091d2a2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokedexJSON.PokemonListViewModel.loadData() -&gt; ()"
-                  moduleName = "PokedexJSON"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/diplomado/Documents/dev/diplomado-7a-gen-Uriel-Soubran/Clase-18-11-23/PokedexJSON/PokedexJSON/PokemonListView/PokemonListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "208">
-               </Location>
-               <Location
-                  uuid = "C9CA4958-8880-4601-87CF-5DD9A2857D6E - 410539bba091d283"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PokedexJSON.PokemonListViewModel.loadData() -&gt; ()"
-                  moduleName = "PokedexJSON"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/diplomado/Documents/dev/diplomado-7a-gen-Uriel-Soubran/Clase-18-11-23/PokedexJSON/PokedexJSON/PokemonListView/PokemonListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "208">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "079DFA77-C2D2-4C60-BAAA-E7607870FC33"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PokedexJSON/PokemonListView/PokemonListViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "loadData()"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "saveFavoritePokemon()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E368F378-F34B-4E70-9AB9-3298A7AE52B2"
-            shouldBeEnabled = "No"
+            uuid = "65CDA1E8-91FD-4ED7-A912-D03A37502344"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PokedexJSON/PokemonListView/PokemonListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "loadData()"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "saveFavoritePokemon()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5F89D5F-E815-46B0-ACFF-63F601D95179"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokedexJSON/PokemonListView/PokemonListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "loadFavoritePokemon()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB637A50-ADB2-486C-851B-28053F4A1292"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokedexJSON/PokemonListView/PokemonListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "loadFavoritePokemon()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

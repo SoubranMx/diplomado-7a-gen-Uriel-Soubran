@@ -26,7 +26,7 @@ class PokemonListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, 
+        tableView.register(UITableViewCell.self,
                            forCellReuseIdentifier: viewModel.pokemonCellIdentifier)
         
         title = viewModel.viewTitle
@@ -49,12 +49,11 @@ extension PokemonListTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.pokemonCellIdentifier,
-                                                 for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.pokemonCellIdentifier, for: indexPath)
         let pokemon = viewModel.pokemon(at: indexPath)
         
         var cellConfiguration = cell.defaultContentConfiguration()
-        cellConfiguration.text = pokemon.name
+        cellConfiguration.text = viewModel.pokemonName(at: indexPath)
         cellConfiguration.secondaryText = pokemon.number
         
         cell.contentConfiguration = cellConfiguration
@@ -75,10 +74,9 @@ extension PokemonListTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let favoriteAction =  UIContextualAction(style: .normal, title: "Add to favorites") {
-            _, _, completion in
-//            add to favorites
-            self.viewModel.addPokemonToFavorites(index: indexPath)
+        let favoriteAction = UIContextualAction(style: .normal, title: "Add to favorites") { _, _, completion in
+            self.viewModel.addPokemonToFavorites(indexPath: indexPath)
+            completion(true)
         }
         
         favoriteAction.backgroundColor = .red
@@ -87,6 +85,7 @@ extension PokemonListTableViewController {
         return UISwipeActionsConfiguration(actions: [favoriteAction])
     }
 }
+
 
 //extension PokemonListTableViewController: UISearchBarDelegate {
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
