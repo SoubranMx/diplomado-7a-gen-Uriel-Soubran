@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol PokemonListViewModelDelegate: AnyObject {
     func shouldReloadTableData()
@@ -32,6 +33,12 @@ class PokemonListViewModel {
     init() {
         loadData()
         loadFavoritePokemon()
+        
+//        notif cuando usuario cierra la app
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(saveFavoritePokemon),
+                                               name: UIApplication.willResignActiveNotification,
+                                               object: nil)
     }
     
     func pokemon(at indexPath: IndexPath) -> Pokemon {
@@ -54,6 +61,7 @@ class PokemonListViewModel {
         
     }
     
+    @objc
     private func saveFavoritePokemon() {
         // FileManager
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
@@ -124,7 +132,7 @@ class PokemonListViewModel {
     func addPokemonToFavorites(indexPath: IndexPath) {
         let favoritePokemon = filterPokemonList[indexPath.row]
         favoritePokemonList.insert(favoritePokemon)
-        saveFavoritePokemon()
+//        saveFavoritePokemon() //esto se usaba cuando se swipeaba, pero ahora esta funcion se manda a llamar en el observer cuando la app esta por cerrarse, de modo que no hace tantas operaciones.
         delegate?.shouldReloadTableData()
     }
 }
