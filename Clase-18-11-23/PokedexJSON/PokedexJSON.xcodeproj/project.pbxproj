@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		554960922B119769006A7165 /* NavigationTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554960912B119769006A7165 /* NavigationTabBarViewController.swift */; };
 		55F4E1FB2B093E90007109AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4E1FA2B093E90007109AD /* AppDelegate.swift */; };
 		55F4E1FD2B093E90007109AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4E1FC2B093E90007109AD /* SceneDelegate.swift */; };
 		55F4E1FF2B093E90007109AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4E1FE2B093E90007109AD /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		554960912B119769006A7165 /* NavigationTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTabBarViewController.swift; sourceTree = "<group>"; };
 		55F4E1F72B093E90007109AD /* PokedexJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokedexJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F4E1FA2B093E90007109AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55F4E1FC2B093E90007109AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				55F4E2032B093E92007109AD /* Assets.xcassets */,
 				55F4E2052B093E92007109AD /* LaunchScreen.storyboard */,
 				55F4E2082B093E92007109AD /* Info.plist */,
+				554960912B119769006A7165 /* NavigationTabBarViewController.swift */,
 			);
 			path = PokedexJSON;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554960922B119769006A7165 /* NavigationTabBarViewController.swift in Sources */,
 				55F4E1FF2B093E90007109AD /* ViewController.swift in Sources */,
 				55F4E1FB2B093E90007109AD /* AppDelegate.swift in Sources */,
 				55F4E21F2B093FD4007109AD /* PokemonLocationViewController.swift in Sources */,
