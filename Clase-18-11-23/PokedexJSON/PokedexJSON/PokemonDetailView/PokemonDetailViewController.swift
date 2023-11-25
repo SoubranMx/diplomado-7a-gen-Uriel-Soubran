@@ -84,12 +84,15 @@ class PokemonDetailViewController: UIViewController {
             return label
         }
     }()
-//    configuracion nbueva de boton
+    
     private lazy var pokemonLocationButton: UIButton = {
         var buttonConfiguration = UIButton.Configuration.filled()
         buttonConfiguration.title = viewModel.locationButtonTitle
+        
         let pokemonLocationButton = UIButton(configuration: buttonConfiguration)
-        pokemonLocationButton.addTarget(self, action: #selector(pokemonLocationButtonPressed), for: .touchUpInside)
+        pokemonLocationButton.addTarget(self,
+                                        action: #selector(pokemonLocationButtonPressed),
+                                        for: .touchUpInside)
         return pokemonLocationButton
     }()
     
@@ -152,6 +155,7 @@ class PokemonDetailViewController: UIViewController {
         for weakness in pokemonWeaknesses {
             pokemonInfoStackView.addArrangedSubview(weakness)
         }
+        
         pokemonInfoStackView.addArrangedSubview(pokemonLocationButton)
         
         contentView.addSubview(pokemonInfoStackView)
@@ -165,10 +169,12 @@ class PokemonDetailViewController: UIViewController {
         
     }
     
-    @objc func pokemonLocationButtonPressed() {
+    @objc
+    func pokemonLocationButtonPressed() {
         let pokemonLocationViewController = PokemonLocationViewController(pokemon: viewModel.pokemon)
         present(pokemonLocationViewController, animated: true)
     }
+    
 
 
 }

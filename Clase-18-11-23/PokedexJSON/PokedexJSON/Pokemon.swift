@@ -8,6 +8,15 @@
 import Foundation
 
 struct Pokemon: Codable, Hashable {
+    struct Evolution: Codable {
+        let name: String
+        let num: String
+    }
+    
+    struct Location: Codable {
+        let latitude: Double
+        let longitude: Double
+    }
     
     let name: String
     let imageURL: String
@@ -33,21 +42,11 @@ struct Pokemon: Codable, Hashable {
         case location
     }
     
-    struct Evolution: Codable {
-        let name: String
-        let num: String
-    }
-    
-    struct Location: Codable {
-        let latitude: Double
-        let longitude: Double
-    }
-    
     static func == (lhs: Pokemon, rhs: Pokemon) -> Bool {
         lhs.id == rhs.id
     }
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
 }
-
