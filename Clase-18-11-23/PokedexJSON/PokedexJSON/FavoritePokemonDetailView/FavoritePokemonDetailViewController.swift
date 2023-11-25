@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 class FavoritePokemonDetailViewController: UIViewController {
     
@@ -50,6 +51,13 @@ class FavoritePokemonDetailViewController: UIViewController {
         captureButton.translatesAutoresizingMaskIntoConstraints = false
         captureButton.addTarget(self, action: #selector(didTapCaptureButton), for: .touchUpInside)
         
+        var selfieButtonConfiguration = UIButton.Configuration.plain()
+        selfieButtonConfiguration.title = "Take Selfie"
+        let selfieButton = UIButton(configuration: selfieButtonConfiguration)
+        selfieButton.addTarget(self, action: #selector(didTapSelfieButton), for: .touchUpInside)
+        selfieButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        
         let actionsStackView = UIStackView()
         actionsStackView.translatesAutoresizingMaskIntoConstraints = false
         actionsStackView.axis = .vertical
@@ -57,6 +65,7 @@ class FavoritePokemonDetailViewController: UIViewController {
         
         actionsStackView.addArrangedSubview(animationButton)
         actionsStackView.addArrangedSubview(captureButton)
+        actionsStackView.addArrangedSubview(selfieButton)
         
         view.addSubview(pokemonImageView)
         view.addSubview(actionsStackView)
@@ -68,6 +77,25 @@ class FavoritePokemonDetailViewController: UIViewController {
             actionsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             actionsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 20)
         ])
+    }
+    
+    @objc
+    private func didTapSelfieButton(){
+        
+        #if targetEnvironment(simulator)
+        var photoPickerConfiguration = PHPickerConfiguration()
+        photoPickerConfiguration.filter = .images
+        photoPickerConfiguration.selectionLimit = 1 //if 0, las que el usuario quiera
+        let photoPicker = PHPickerViewController(configuration: photoPickerConfiguration)
+        photoPicker.delegate = self
+        present(photoPicker, animated: true)
+        #else
+        //        activar la camara, iOS ya tiene una escena
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .camera
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true)
+        #endif
     }
     
     @objc
@@ -97,6 +125,26 @@ class FavoritePokemonDetailViewController: UIViewController {
         } completion: { _ in
             self.currentAnimation += 1
             self.currentAnimation = self.currentAnimation > 7 ? 0 : self.currentAnimation
+        }
+    }
+}
+
+extension FavoritePokemonDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        guard let image = info[.originalImage] as? UIImage else {return}
+        print(image.size)
+    }
+}
+
+extension FavoritePokemonDetailViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
+        guard let itemProvider = results.first?.itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) else { return }
+        
+        itemProvider.loadObject(ofClass: UIImage.self) { image, error in
+            guard let image = image as? UIImage, error == nil else {return}
+            print(image.size)
         }
     }
 }
