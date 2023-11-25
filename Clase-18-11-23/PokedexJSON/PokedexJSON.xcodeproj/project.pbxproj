@@ -15,6 +15,8 @@
 		557358A72B126C3400A99828 /* UserAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557358A62B126C3400A99828 /* UserAuthenticationViewController.swift */; };
 		557358AA2B12735C00A99828 /* CaptureSimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557358A92B12735C00A99828 /* CaptureSimViewController.swift */; };
 		557358AC2B12748600A99828 /* CaptureSim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557358AB2B12748600A99828 /* CaptureSim.swift */; };
+		557358AE2B1288DB00A99828 /* pokeball_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 557358AD2B1288DB00A99828 /* pokeball_animation.json */; };
+		557358B12B12896700A99828 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 557358B02B12896700A99828 /* Lottie */; };
 		55F4E1FB2B093E90007109AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4E1FA2B093E90007109AD /* AppDelegate.swift */; };
 		55F4E1FD2B093E90007109AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4E1FC2B093E90007109AD /* SceneDelegate.swift */; };
 		55F4E1FF2B093E90007109AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4E1FE2B093E90007109AD /* ViewController.swift */; };
@@ -40,6 +42,7 @@
 		557358A62B126C3400A99828 /* UserAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationViewController.swift; sourceTree = "<group>"; };
 		557358A92B12735C00A99828 /* CaptureSimViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSimViewController.swift; sourceTree = "<group>"; };
 		557358AB2B12748600A99828 /* CaptureSim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSim.swift; sourceTree = "<group>"; };
+		557358AD2B1288DB00A99828 /* pokeball_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokeball_animation.json; sourceTree = "<group>"; };
 		55F4E1F72B093E90007109AD /* PokedexJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokedexJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F4E1FA2B093E90007109AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55F4E1FC2B093E90007109AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				557358B12B12896700A99828 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +126,7 @@
 				55F4E2162B093FD4007109AD /* PokemonListView */,
 				55F4E2122B093FD4007109AD /* PokemonLocationView */,
 				55F4E1FA2B093E90007109AD /* AppDelegate.swift */,
+				557358AD2B1288DB00A99828 /* pokeball_animation.json */,
 				55F4E2282B0942CA007109AD /* pokemon_list.json */,
 				55F4E1FC2B093E90007109AD /* SceneDelegate.swift */,
 				55F4E1FE2B093E90007109AD /* ViewController.swift */,
@@ -179,6 +184,9 @@
 			dependencies = (
 			);
 			name = PokedexJSON;
+			packageProductDependencies = (
+				557358B02B12896700A99828 /* Lottie */,
+			);
 			productName = PokedexJSON;
 			productReference = 55F4E1F72B093E90007109AD /* PokedexJSON.app */;
 			productType = "com.apple.product-type.application";
@@ -207,6 +215,9 @@
 				Base,
 			);
 			mainGroup = 55F4E1EE2B093E90007109AD;
+			packageReferences = (
+				557358AF2B12896700A99828 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			productRefGroup = 55F4E1F82B093E90007109AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -225,6 +236,7 @@
 				55F4E2292B0942CA007109AD /* pokemon_list.json in Resources */,
 				55F4E2042B093E92007109AD /* Assets.xcassets in Resources */,
 				55F4E2022B093E90007109AD /* Main.storyboard in Resources */,
+				557358AE2B1288DB00A99828 /* pokeball_animation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +485,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		557358AF2B12896700A99828 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		557358B02B12896700A99828 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 557358AF2B12896700A99828 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 55F4E1EF2B093E90007109AD /* Project object */;
 }

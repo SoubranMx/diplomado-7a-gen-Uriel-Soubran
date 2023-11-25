@@ -206,10 +206,42 @@
             filePath = "PokedexJSON/FavoritePokemonDetailView/FavoritePokemonDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F2F1AC9C-640F-4E70-A75D-BA93B121B3C5 - f06a297815dfe715"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;__C.NSItemProviderReading&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PokedexJSON.FavoritePokemonDetailViewController.picker(_: __C.PHPickerViewController, didFinishPicking: Swift.Array&lt;PhotosUI.PHPickerResult&gt;) -&gt; ()"
+                  moduleName = "PokedexJSON"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diplomado/Documents/dev/diplomado-7a-gen-Uriel-Soubran/Clase-18-11-23/PokedexJSON/PokedexJSON/FavoritePokemonDetailView/FavoritePokemonDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "380">
+               </Location>
+               <Location
+                  uuid = "F2F1AC9C-640F-4E70-A75D-BA93B121B3C5 - 7fef6b9d2abffad6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PokedexJSON.FavoritePokemonDetailViewController.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "PokedexJSON"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diplomado/Documents/dev/diplomado-7a-gen-Uriel-Soubran/Clase-18-11-23/PokedexJSON/PokedexJSON/FavoritePokemonDetailView/FavoritePokemonDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "364">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -222,8 +254,8 @@
             filePath = "PokedexJSON/FavoritePokemonDetailView/FavoritePokemonDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "picker(_:didFinishPicking:)"
             landmarkType = "7">
          </BreakpointContent>

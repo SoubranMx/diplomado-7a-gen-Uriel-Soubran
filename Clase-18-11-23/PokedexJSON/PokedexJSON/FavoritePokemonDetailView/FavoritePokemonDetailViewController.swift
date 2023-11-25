@@ -7,6 +7,7 @@
 
 import UIKit
 import PhotosUI
+import Lottie
 
 class FavoritePokemonDetailViewController: UIViewController {
     
@@ -37,6 +38,12 @@ class FavoritePokemonDetailViewController: UIViewController {
     
     func setupView() {
         view.backgroundColor = .systemBackground
+        
+        let animationView = LottieAnimationView(name: "pokeball_animation")
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
         
         var animationButtonConfiguration = UIButton.Configuration.filled()
         animationButtonConfiguration.title = "Animate"
@@ -69,13 +76,17 @@ class FavoritePokemonDetailViewController: UIViewController {
         
         view.addSubview(pokemonImageView)
         view.addSubview(actionsStackView)
+        view.addSubview(animationView)
         
         NSLayoutConstraint.activate([
             pokemonImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             pokemonImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
             
             actionsStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            actionsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 20)
+            actionsStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 20),
+            
+            animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
