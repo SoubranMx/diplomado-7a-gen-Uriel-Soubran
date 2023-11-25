@@ -17,6 +17,7 @@ class PokemonListViewModel {
     
     private var pokemonList: [Pokemon] = []
     private var filterPokemonList: [Pokemon] = []
+    private var favoritePokemonList: Set<Pokemon> = []
     
     let pokemonCellIdentifier = "pokemonCell"
     
@@ -66,6 +67,11 @@ class PokemonListViewModel {
             $0.name.lowercased().contains(searchText.lowercased()) ||
             $0.number.lowercased().contains(searchText.lowercased())
         }
+    }
+    
+    func addPokemonToFavorites(index: IndexPath) {
+        let favoritePokemon = filterPokemonList[index.row]
+        favoritePokemonList.insert(favoritePokemon) //insert es append pero para Set
     }
 }
 

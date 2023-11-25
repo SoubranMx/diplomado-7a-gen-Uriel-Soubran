@@ -12,7 +12,7 @@ protocol PokemonDetailViewModelDelegate: AnyObject {
 }
 
 class PokemonDetailViewModel {
-    private let pokemon: Pokemon
+    let pokemon: Pokemon
     
     var pokemonName: String { pokemon.name }
     var pokemonNumber: String { pokemon.number }

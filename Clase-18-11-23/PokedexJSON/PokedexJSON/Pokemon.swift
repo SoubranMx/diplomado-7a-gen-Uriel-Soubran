@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Pokemon: Codable {
+struct Pokemon: Codable, Hashable {
+    
     let name: String
     let imageURL: String
     let id: Int
@@ -16,6 +17,8 @@ struct Pokemon: Codable {
     let weight: String
     let height: String
     let weaknesses: [String]
+    let previousEvolution: String
+    let location: Location?
     
     private enum CodingKeys: String, CodingKey {
         case name
@@ -26,5 +29,25 @@ struct Pokemon: Codable {
         case weight
         case height
         case weaknesses
+        case previousEvolution = "prev_evolution"
+        case location
+    }
+    
+    struct Evolution: Codable {
+        let name: String
+        let num: String
+    }
+    
+    struct Location: Codable {
+        let latitude: Double
+        let longitude: Double
+    }
+    
+    static func == (lhs: Pokemon, rhs: Pokemon) -> Bool {
+        lhs.id == rhs.id
+    }
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
+

@@ -73,6 +73,19 @@ extension PokemonListTableViewController {
         let pokemonDetailViewController = PokemonDetailViewController(pokemon: pokemon)
         navigationController?.pushViewController(pokemonDetailViewController, animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let favoriteAction =  UIContextualAction(style: .normal, title: "Add to favorites") {
+            _, _, completion in
+//            add to favorites
+            self.viewModel.addPokemonToFavorites(index: indexPath)
+        }
+        
+        favoriteAction.backgroundColor = .red
+        favoriteAction.image = UIImage(systemName: "heart")
+        
+        return UISwipeActionsConfiguration(actions: [favoriteAction])
+    }
 }
 
 //extension PokemonListTableViewController: UISearchBarDelegate {

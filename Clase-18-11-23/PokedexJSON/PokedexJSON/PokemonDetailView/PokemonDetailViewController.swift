@@ -166,7 +166,7 @@ class PokemonDetailViewController: UIViewController {
     }
     
     @objc func pokemonLocationButtonPressed() {
-        let pokemonLocationViewController = PokemonLocationViewController()
+        let pokemonLocationViewController = PokemonLocationViewController(pokemon: viewModel.pokemon)
         present(pokemonLocationViewController, animated: true)
     }
 
