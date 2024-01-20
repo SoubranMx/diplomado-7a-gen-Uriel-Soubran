@@ -15,6 +15,7 @@
 		5581B9B32B5B3FCB0011FA95 /* KeychainExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581B9B22B5B3FCB0011FA95 /* KeychainExampleUITests.swift */; };
 		5581B9B52B5B3FCB0011FA95 /* KeychainExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581B9B42B5B3FCB0011FA95 /* KeychainExampleUITestsLaunchTests.swift */; };
 		5581B9C22B5B3FEF0011FA95 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581B9C12B5B3FEF0011FA95 /* KeychainService.swift */; };
+		5581B9C42B5B45DD0011FA95 /* KeychainServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5581B9C32B5B45DD0011FA95 /* KeychainServiceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		5581B9B22B5B3FCB0011FA95 /* KeychainExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainExampleUITests.swift; sourceTree = "<group>"; };
 		5581B9B42B5B3FCB0011FA95 /* KeychainExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5581B9C12B5B3FEF0011FA95 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		5581B9C32B5B45DD0011FA95 /* KeychainServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				5581B9A82B5B3FCB0011FA95 /* KeychainExampleTests.swift */,
+				5581B9C32B5B45DD0011FA95 /* KeychainServiceTest.swift */,
 			);
 			path = KeychainExampleTests;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5581B9A92B5B3FCB0011FA95 /* KeychainExampleTests.swift in Sources */,
+				5581B9C42B5B45DD0011FA95 /* KeychainServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

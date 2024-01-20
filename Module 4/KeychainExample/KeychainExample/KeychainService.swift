@@ -9,10 +9,26 @@ import Foundation
 
 struct KeychainService {
     let defaultService = "mx.unam.ioslab.keychainExample"
+    
     enum KeychainError: Error {
         case noPassword
         case unhandledError(status: OSStatus)
     }
+    
+    private let queue = DispatchQueue(label: "mx.unam.ioslab.keychainService")
+    
+    func save(key: String, value: String, completion: @escaping (Error?)->Void) {
+//        dentro de un queue
+        queue.async {
+            do {
+                try self.save(key: key, value: value)
+                completion(nil)
+            } catch let err {
+                completion(err)
+            }
+        }
+    }
+    
     func save(key account: String, value: String) throws {
         guard let data = value.data(using: .utf8) else { return }
         let query: [String: Any] = [
@@ -56,5 +72,15 @@ struct KeychainService {
         } else {
             return nil
         }
+    }
+    
+    func delete(key account: String) {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: defaultService,
+            kSecAttrAccount as String: account
+        ]
+        
+        
     }
 }
